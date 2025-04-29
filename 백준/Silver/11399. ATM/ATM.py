@@ -1,13 +1,14 @@
-p = int(input()) # ATM에 줄을 선 사람 수
-pi = list(map(int, input().split())) # 각 순서의 사람들이 돈을 인출하는데 걸리는 시간
+N = int(input())
+P = list(map(int, input().split()))
 
-pi.sort() # 돈을 인출하는데 걸리는 시간이 적은 순으로 정렬
+# 오름차순 정렬일 때 최솟값
+P.sort()
 
-min = 0
-sum_min = 0
+result = 0
+min_result = 0
 
-for i in range(p): 
-    min += pi[i]
-    sum_min += min
+for i in range(N):
+    result += P[i]
+    min_result += result
 
-print(sum_min)
+print(min_result)
