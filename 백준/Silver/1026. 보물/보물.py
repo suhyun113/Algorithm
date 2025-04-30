@@ -1,11 +1,13 @@
-N = int(input())
-A = list(map(int, input().split()))
-B = list(map(int, input().split()))
-S = 0
-A.sort() # 오름차순 정렬 0 1 1 1 6
-B.sort(reverse=True) # 내림차순 정렬 8 7 3 2 1
+from os import remove
 
-# S의 값을 가장 작게 만들고 싶음
+N = int(input())
+A, B = list(map(int, input().split())), list(map(int, input().split()))
+S = 0
+
+A.sort() # 오름차순 재배열
+B_sorted = sorted(B, reverse=True) # 내림차순으로 재배열한 B
+
 for i in range(N):
-    S += (A[i] * B[i])
+    S += A[i] * B_sorted[i]
+
 print(S)
