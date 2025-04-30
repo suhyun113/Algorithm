@@ -1,5 +1,3 @@
-from os import remove
-
 N = int(input())
 A, B = list(map(int, input().split())), list(map(int, input().split()))
 S = 0
